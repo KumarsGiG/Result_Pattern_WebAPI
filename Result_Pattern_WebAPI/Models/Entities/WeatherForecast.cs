@@ -1,4 +1,4 @@
-namespace Result_Pattern_WebAPI
+namespace Result_Pattern_WebAPI.Models.Entities
 {
     public class WeatherForecast
     {

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Result_Pattern_WebAPI.Models.Entities;
 
 namespace Result_Pattern_WebAPI.Controllers
 {

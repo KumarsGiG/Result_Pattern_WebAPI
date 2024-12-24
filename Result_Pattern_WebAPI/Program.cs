@@ -1,3 +1,7 @@
+using Result_Pattern_WebAPI.IRepository;
+using Result_Pattern_WebAPI.IServices;
+using Result_Pattern_WebAPI.Repository;
+using Result_Pattern_WebAPI.Services;
 
 namespace Result_Pattern_WebAPI
 {
@@ -14,6 +18,13 @@ namespace Result_Pattern_WebAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            #region ## application servies ##
+
+            builder.Services.AddSingleton<IUserService, UserService>();
+            builder.Services.AddSingleton<IUserRepository, UserRepository>();
+
+            #endregion
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -26,7 +37,6 @@ namespace Result_Pattern_WebAPI
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
