@@ -14,10 +14,7 @@ namespace Result_Pattern_WebAPI.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
+        public WeatherForecastController(ILogger<WeatherForecastController> logger) => _logger = logger;
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
@@ -27,8 +24,7 @@ namespace Result_Pattern_WebAPI.Controllers
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            }).ToArray();
         }
     }
 }
